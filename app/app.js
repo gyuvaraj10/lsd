@@ -19,7 +19,7 @@ config(['$stateProvider','$urlRouterProvider',
       'home': {
         controller: 'LaranerdsHome',
         controllerAs: 'laranerdsHome',
-        templateUrl: 'home/home.html'
+        templateUrl: 'home/views/home.html'
       }
     }
   })

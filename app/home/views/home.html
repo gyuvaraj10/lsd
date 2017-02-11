@@ -1,0 +1,28 @@
+<div ng-controller="LaranerdsHome" class="container">
+    <nav class="navbar navbar-inverse">
+        <h1 style="color: white; align-content: stretch">Laranerds</h1>
+    </nav>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="searchQuery" placeholder="Search for books ...">
+                <span class="input-group-btn">
+                   <button class="btn btn-default" data-ng-click="searchForBooks()" type="button">Search</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row" data-ng-repeat="shelf in shelfs">
+            <div class="col-sm-6 col-md-3" data-ng-repeat="book in shelf.books">
+                <div class="thumbnail">
+                    <img src="{{book.thumbnail}}" alt="{{book.thumbnail}}">
+                    <div class="caption">
+                        <span>{{ book.title }}</span>
+                        <p><a href="{{book.link}}" class="btn btn-primary" role="button" target="_blank">View Book</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
