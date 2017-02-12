@@ -18,10 +18,8 @@ router.get('/search/:query', function (req, res) {
     var promise = new Promise(function (resolve, reject) {
         booksS.search(query,  options, function(error, results, apiResponse) {
             if (!error) {
-                console.log(results);
                 resolve(results);
             } else {
-                console.log(error);
                 reject(error);
             }
         });
