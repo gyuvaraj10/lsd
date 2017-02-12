@@ -10,7 +10,6 @@ angular.module('myApp', [
 config(['$stateProvider','$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
 
-  console.log('running the state provider');
   $urlRouterProvider.otherwise('/home');
 
   $stateProvider.state('laranerds', {
