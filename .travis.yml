@@ -3,8 +3,9 @@ language: node_js
 services:
     - docker
 before_install:
-    - docker build -t gyuvaraj10/laranerds:0.1 .
-
+    - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      docker build -t gyuvaraj10/laranerds:0.1 .;
+      fi
 after_success:
     - if [ "$TRAVIS_BRANCH" == "master" ]; then
       docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" hub.docker.com;
