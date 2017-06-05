@@ -7,7 +7,7 @@ before_install:
 
 after_success:
     - if [ "$TRAVIS_BRANCH" == "master" ]; then
-      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" hub.docker.com;
       docker push gyuvaraj10/laranerds;
       docker images;
       fi
