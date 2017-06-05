@@ -6,8 +6,10 @@ before_install:
     - docker build -t gyuvaraj10/laranerds .
 
 after_success:
-    - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" hub.docker.com
-    - docker push gyuvaraj10/laranerds
-    - docker images
+    - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" hub.docker.com
+      docker push gyuvaraj10/laranerds
+      docker images
+      fi
  
 
