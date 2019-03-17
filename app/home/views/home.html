@@ -1,26 +1,19 @@
 <div ng-controller="LaranerdsHome" class="container">
-    <nav class="navbar navbar-inverse">
-        <h1 style="color: white; align-content: stretch">Laranerds</h1>
+    <br/>
+    <nav class="navbar navbar-dark bg-dark">
+        <h1 style="color: white; align-content: stretch">Atom Bank</h1>
     </nav>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="input-group">
-                <input type="text" class="form-control" ng-model="searchQuery" placeholder="Search for books ...">
-                <span class="input-group-btn">
-                   <button class="btn btn-default" data-ng-click="searchForBooks()" type="button">Search</button>
-                </span>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="row" data-ng-repeat="shelf in shelfs">
-            <div class="col-sm-6 col-md-3" data-ng-repeat="book in shelf.books">
-                <div class="thumbnail">
-                    <img src="{{book.thumbnail}}" alt="{{book.thumbnail}}">
-                    <div class="caption">
-                        <span>{{ book.title }}</span>
-                        <p><a href="{{book.link}}" class="btn btn-primary" role="button" target="_blank">View Book</a></p>
-                    </div>
+    <br/>
+    <h1 class="badge badge-primary">Fixed Saver Accounts</h1>
+    <div class="row" data-ng-repeat="item in shelfs">
+        <div class="row" data-ng-repeat="ac in item.books">
+            <div class="card border-success col">
+                <div class="card-header">{{ ac.duration }}</div>
+                <div class="card-body text-success">
+                    <h5 class="card-title">{{ ac.interestType }}</h5>
+                    <p class="card-text">{{ ac.gross }}</p>
+                    <p class="card-text">{{ ac.aer }}</p>
+                    <p class="card-text">{{ ac.earnedAmount }}</p>
                 </div>
             </div>
         </div>
